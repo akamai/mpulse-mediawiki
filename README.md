@@ -14,6 +14,10 @@ Add the following line to the end of LocalSettings.php:
 
 # Version History
 
+Version 1.0.1
+
+* Fixed script warning
+
 Version 1.0
 
 * Initial release

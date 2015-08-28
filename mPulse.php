@@ -20,7 +20,7 @@ $wgExtensionCredits['mPulse'][] = array(
     'author' => 'SOASTA',
     'url' => 'http://www.soasta.com/mpulse/',
     'descriptionmsg' => 'mpulse-desc',
-    'version' => '1.0'
+    'version' => '1.0.1'
 );
 
 /*** Default configuration ***/
