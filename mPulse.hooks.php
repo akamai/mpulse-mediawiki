@@ -11,7 +11,7 @@ class mPulse {
        global $wgmPulseApiKey;
 
        if ($wgmPulseApiKey !== '') {
-           $script .= <<<EOD
+           $script = <<<EOD
 (function(){
   if (window.BOOMR && window.BOOMR.version) { return; }
   var dom,doc,where,iframe = document.createElement("iframe"),win = window;
