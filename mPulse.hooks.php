@@ -23,7 +23,6 @@ class mPulse {
     window.BOOMR.snippetExecuted = true;
     window.BOOMR.snippetVersion = 12;
 
-    // NOTE: Set Boomerang URL here
     window.BOOMR.url = "https://c.go-mpulse.net/boomerang/{{API_KEY}}";
 
     var // document.currentScript is supported in all browsers other than IE
