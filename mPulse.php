@@ -1,9 +1,9 @@
 <?php
 #
-# SOASTA mPulse MediaWiki extension
+# Akamai mPulse MediaWiki extension
 #
-# Copyright (C) 2015 SOASTA
-# http://www.soasta.com/mpulse/
+# Copyright (C) 2019 Akamai
+# https://www.akamai.com/us/en/products/performance/mpulse-real-user-monitoring.jsp
 #
 
 if (!defined('MEDIAWIKI')) {
@@ -16,16 +16,16 @@ $wgExtensionMessagesFiles['mPulse'] = __DIR__ . '/mPulse.i18n.php';
 // Extension credits that show up on Special:Version
 $wgExtensionCredits['mPulse'][] = array(
     'path' => __FILE__,
-    'name' => 'SOASTA mPulse',
-    'author' => 'SOASTA',
-    'url' => 'http://www.soasta.com/mpulse/',
+    'name' => 'Akamai mPulse',
+    'author' => 'Akamai',
+    'url' => 'https://github.com/akamai/mpulse-mediawiki',
     'descriptionmsg' => 'mpulse-desc',
-    'version' => '1.0.1'
+    'version' => '1.1.0'
 );
 
 /*** Default configuration ***/
 
-// SOASTA mPulse API key (e.g. A1A1A-B2B2B-C3C3C-D4D4Dl-E5E5E)
+// Akamai mPulse API key (e.g. A1A1A-B2B2B-C3C3C-D4D4Dl-E5E5E)
 $wgmPulseApiKey = '';
 
 $wgAutoloadClasses['mPulse'] = __DIR__ . '/mPulse.hooks.php';
