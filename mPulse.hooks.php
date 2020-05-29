@@ -13,7 +13,7 @@ class mPulse {
         if ($wgmPulseApiKey !== '') {
             $script = <<<EOD
 (function() {
-    // Boomerang Loader Snippet version 12
+    // Boomerang Loader Snippet version 14
     if (window.BOOMR && (window.BOOMR.version || window.BOOMR.snippetExecuted)) {
         return;
     }
@@ -21,12 +21,14 @@ class mPulse {
     window.BOOMR = window.BOOMR || {};
     window.BOOMR.snippetStart = new Date().getTime();
     window.BOOMR.snippetExecuted = true;
-    window.BOOMR.snippetVersion = 12;
+    window.BOOMR.snippetVersion = 14;
 
     window.BOOMR.url = "https://c.go-mpulse.net/boomerang/{{API_KEY}}";
 
     var // document.currentScript is supported in all browsers other than IE
         where = document.currentScript || document.getElementsByTagName("script")[0],
+        // Parent element of the script we inject
+        parentNode = where.parentNode,
         // Whether or not Preload method has worked
         promoted = false,
         // How long to wait for Preload to work before falling back to iframe method
@@ -46,7 +48,7 @@ class mPulse {
         // but some naive parsers will see a missing async attribute and think we're not async
         script.async = true;
 
-        where.parentNode.appendChild(script);
+        parentNode.appendChild(script);
 
         promoted = true;
     }
@@ -77,7 +79,7 @@ class mPulse {
         if (!window.addEventListener && window.attachEvent && navigator.userAgent.match(/MSIE [67]\./)) {
             window.BOOMR.snippetMethod = "s";
 
-            bootstrap(where.parentNode, "boomr-async");
+            bootstrap(parentNode, "boomr-async");
             return;
         }
 
@@ -102,7 +104,7 @@ class mPulse {
         iframeStyle.display = "none";
 
         // Append to the end of the current block
-        where.parentNode.appendChild(iframe);
+        parentNode.appendChild(iframe);
 
         // Try to get the iframe's document object
         try {
@@ -119,14 +121,14 @@ class mPulse {
             // Set the src of the iframe to a JavaScript URL that will immediately set its document.domain to match the parent.
             // This lets us access the iframe document long enough to inject our script.
             // Our script may need to do more domain massaging later.
-            iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void(0);";
+            iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void 0;";
             win = iframe.contentWindow;
 
             doc = win.document.open();
         }
 
         if (dom) {
-            // Unsafe version for IE8 compatability. If document.domain has changed, we can't use win, but we can use doc.
+            // Unsafe version for IE8 compatibility. If document.domain has changed, we can't use win, but we can use doc.
             doc._boomrl = function() {
                 this.domain = dom;
                 bootstrap();
@@ -185,7 +187,7 @@ class mPulse {
         BOOMR_lstart = new Date().getTime();
 
         // Append our link tag
-        where.parentNode.appendChild(link);
+        parentNode.appendChild(link);
     }
     else {
         // No Preload support, use iframe loader
