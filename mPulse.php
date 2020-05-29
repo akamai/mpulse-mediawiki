@@ -20,7 +20,7 @@ $wgExtensionCredits['mPulse'][] = array(
     'author' => 'Akamai',
     'url' => 'https://github.com/akamai/mpulse-mediawiki',
     'descriptionmsg' => 'mpulse-desc',
-    'version' => '1.1.0'
+    'version' => '1.2.0'
 );
 
 /*** Default configuration ***/
