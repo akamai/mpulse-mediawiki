@@ -15,6 +15,10 @@ Add the following line to the end of LocalSettings.php:
 
 # Version History
 
+Version 1.3.0
+
+* Updated to Loader Snippet Version 15
+
 Version 1.2.0
 
 * Updated to Loader Snippet Version 14
