@@ -2,7 +2,7 @@
 #
 # Akamai mPulse MediaWiki extension
 #
-# Copyright (C) 2019 Akamai
+# Copyright (C) 2021 Akamai Technologies, Inc, https://akamai.com
 # https://www.akamai.com/us/en/products/performance/mpulse-real-user-monitoring.jsp
 #
 
@@ -20,7 +20,7 @@ $wgExtensionCredits['mPulse'][] = array(
     'author' => 'Akamai',
     'url' => 'https://github.com/akamai/mpulse-mediawiki',
     'descriptionmsg' => 'mpulse-desc',
-    'version' => '1.2.0'
+    'version' => '1.3.0'
 );
 
 /*** Default configuration ***/
